@@ -1,0 +1,11 @@
+.profile-card-main {
+    border: 2px solid orange;
+   width: 100%;
+    box-sizing: border-box;
+  
+}
+.profile-card {
+    border: 2px solid blue;
+    height: 20rem;
+    width: 20rem;
+}

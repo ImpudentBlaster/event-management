@@ -1,0 +1,29 @@
+.homepage-main{
+    width: 100%;
+    display: grid; 
+    padding: 3rem;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    max-width: auto;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 2rem;
+}
+.homepage-drawer {
+    padding-top: 4rem;
+}
+.homepage-main h2  {
+    margin: 0;
+}
+.homepage-invite-card-main {
+    background-color: rgba(0, 0, 0, 0.041);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    width: 15rem;
+}
+  .homepage-h2 {
+    display: flex;
+    padding: 0 3rem;
+   justify-content: space-between;
+   align-items: center;
+}

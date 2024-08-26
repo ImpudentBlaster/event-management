@@ -1,0 +1,41 @@
+.event-creator-main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+/* overflow-y: scroll; */
+    box-sizing: border-box;
+    padding: 1rem 0 1rem 2rem;
+ width: 100%;
+}
+.event-creator-heading h2{
+    margin:0;
+    margin-top: 1rem;
+}
+.event-creator-inputs-main{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.event-creator-inputs {
+    display: flex;
+    justify-content: space-between;
+}
+.event-creator-inputs input {
+    border: 0;
+    border-radius: 1rem;
+    background-color: rgb(224, 224, 224);
+    padding: 0.75rem 1rem;
+    width: 50%;
+}
+ input:focus{
+    outline: 0;
+}
+.event-creator-inputs p{
+    margin: 0;
+}
+.event-creator-button button{
+   padding: 0.5rem 2rem;
+   border: 0;
+   border-radius: 0.5rem;
+}

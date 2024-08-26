@@ -1,0 +1,29 @@
+.sidebar-main{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+    width: fit-content;
+    gap: 3rem;
+    height: 100vh;
+    position: fixed;
+}
+.sidebar-top-icon p:hover{
+    color: white;
+    background-color:rgb(240, 14, 240) ;
+}
+.sidebar-main p{
+    color: rgb(240, 14, 240);
+    margin: 0;
+    font-size: 1.5rem;
+    padding:2rem;
+    text-decoration: none;
+    height: fit-content;
+    width: fit-content;
+}
+.sidebar-icon-2 p:hover{
+    color: white;
+}
+.sidebar-icon-1 :hover , .sidebar-icon-2:hover{
+    color: white;
+    background-color:rgb(240, 14, 240) ;
+}
