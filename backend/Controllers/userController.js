@@ -2,11 +2,9 @@ const userSchema = require('../Models/userSchema')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
-const maxAge = 60*60;
+
 const createToken = (id) =>{
- return jwt.sign({id} , "secret-key" , {
-    expiresIn:maxAge
-  })
+ return jwt.sign({id} , "secret-key" )
 }
 
 const handleErrors = (err) => {
@@ -36,7 +34,7 @@ const addUser = async (req, res) => {
         await data.save()
         const token = createToken(data._id)
         console.log(token)
-        res.cookie("jwt" , token, {maxAge:maxAge*1000, httpOnly:true})
+        res.cookie("jwt" , token, { httpOnly:true})
         res.status(200).send(data)
     } catch (error) {
         const errors = handleErrors(error)
@@ -49,7 +47,7 @@ const login = async (req,res)=>{
     const {email , password} = req.body;
   const data =   await userSchema.login(email , password)
   const token = createToken(data._id)
-  res.cookie("jwt" , token , {maxAge:maxAge , httpOnly:true})
+  res.cookie("jwt" , token , { httpOnly:true})
   res.status(200).send(data)
   } catch (error) {
     const errors = handleErrors(error)
@@ -71,13 +69,22 @@ const findUser = async (req,res) =>{
 try {
   let data = await userSchema.findOne({email:req.params.email})
   res.send(data)
-  console.log(data)
 } catch (error) {
   res.send("error")
   console.log(error)
 }
 }
 
+const logout = async (req,res) =>{
+  try {
+    res.cookie("jwt" ,"", {maxAge : 0 , httpOnly :true})
+    res.send("logged out")
+  } catch (error) {
+    res.send(error.message)
+  }
+}
+
+exports.logout = logout
 exports.findUser = findUser
 exports.showUser = showUser
 exports.addUser = addUser

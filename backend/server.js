@@ -9,7 +9,7 @@ const jwtAuthMiddleware = require('./Middleware/AuthMiddleware')
 const eventRoutes = require('./Routes/event-routes')
 
 const corsOption = {
-    origin: "http://localhost:3000",
+    origin: "*",
     credentials: true
 }
 
@@ -17,10 +17,15 @@ app.get('/', (req, res) => {
     res.send('Home')
 })
 app.use(cors(corsOption))
+
+
 app.use(express.json())
 app.use(cookieParser())
 app.use('/', userRoutes)
 app.use('/', eventRoutes)
+app.get('/protected-endpoint' , jwtAuthMiddleware , (req,res)=>{
+    res.status(200).send(true)
+})
 mongoose.connect('mongodb+srv://sagarsharmatechies:sagarsharmatechies@democluster.dlxyrkz.mongodb.net/Assignment')
     .then(
         app.listen(port, (req, res) => {

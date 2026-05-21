@@ -4,6 +4,7 @@ import Router from './Router';
 import Login from './Pages/Login/Login';
 import Signup from './Pages/SignUp/Signup'
 import DrawerComponent from './Components/Drawer/Drawer';
+import './index.css'
 
 
 
@@ -15,6 +16,8 @@ root.render(
 <Signup/> */}
 {/* <EventSender/> */}
 <Router/>
+
+{/* <SpinComponent/> */}
   </React.StrictMode>
 );
 

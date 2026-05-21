@@ -6,7 +6,7 @@ function MainLayout() {
   return (
     <div className='mainlayout-grid'>
         <Sidebar/>
-        <div className='mainlayout-outlet'>
+        <div className='mainlayout-outlet p-8'>
 
    <Outlet />
         </div>
